@@ -10,37 +10,37 @@ const questions = [
         name : "title",
         message : "What is the title of your project?",
     },
-    // {
-    //     type: "input",
-    //     name : "description",
-    //     message : "Provide a short description of your project?",
-    // },
-    // {
-    //     type: "input",
-    //     name : "installation",
-    //     message : "How can users install your project?",
-    // },
-    // {
-    //     type: "input",
-    //     name: "usage",
-    //     message: "Provide instructions for the usage of your project",
-    //   },
-    //   {
-    //     type: "list",
-    //     name: "license",
-    //     message: "Choose a license",
-    //     choices: ["MIT", "GNU", "Boost", "Apache", "ISC", "Mozilla"],
-    //   },
-    //   {
-    //     type : "input",
-    //     name : "contribute",
-    //     message: "How can others contribute to your project?",
-    //   },
-    //   {
-    //     type: "input",
-    //     name : "tests",
-    //     message: "Describe any tests for your project"
-    //   },
+    {
+        type: "input",
+        name : "description",
+        message : "Provide a short description of your project?",
+    },
+    {
+        type: "input",
+        name : "installation",
+        message : "How can user install your project?",
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "Provide instructions for the usage of your project",
+      },
+      {
+        type: "list",
+        name: "license",
+        message: "Choose a license",
+        choices: ["MIT", "GNU", "Boost", "Apache", "ISC", "Mozilla"],
+      },
+      {
+        type : "input",
+        name : "contribute",
+        message: "How can others contribute to your project?",
+      },
+      {
+        type: "input",
+        name : "tests",
+        message: "Describe any tests for your project"
+      },
       {
         type: "input",
         name: "github",
@@ -63,9 +63,8 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((answers)=>{
       console.log(answers)
-      
-        const markdown = generateMarkdown(answers);
-        writeToFile("ReadMe.md", markdown);
+    const markdown = generateMarkdown(answers);
+    writeToFile("ReadMe.md", markdown);
        
 
     })
